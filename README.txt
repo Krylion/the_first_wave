@@ -1,1 +1,3 @@
-the_first_wave README
+To run The First Wave, you need to install some required tools.
+
+Read the README.md file for more information.
