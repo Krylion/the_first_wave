@@ -1,5 +1,5 @@
 [logo]: https://github.com/Krylion/the_first_wave/blob/master/the_first_wave/static/logo.png
-[logo]
+![oops][logo]
 ##The First Wave
 
 ###Hello!
@@ -8,7 +8,9 @@ Here is my first project, which has been made in association with Pyramid Framew
 Unfortunately all website content is in polish only.
 Enjoy! :-)
 
-####How to run The First Wave website?
+
+
+#####How to run The First Wave website?
 
 - Install the prerequisite tools (in Linux):
 ```
@@ -45,3 +47,5 @@ python setup.py develop
 ```
 pserve production.ini
 ```
+
+Done
