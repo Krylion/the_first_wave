@@ -1,8 +1,7 @@
 [logo]: https://github.com/Krylion/the_first_wave/blob/master/the_first_wave/static/logo.png
 ![oops][logo]
-##The First Wave
+##Hello!
 
-###Hello!
 Here is my first project, which has been made in association with Pyramid Framework. You can find here many information about Pyramid and Jinja2 template engine.
 
 Unfortunately all website content is in polish only.
