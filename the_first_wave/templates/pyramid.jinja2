@@ -1,0 +1,35 @@
+{% extends "maintemplate.jinja2" %}
+{% block title %}
+Pyramid - The First Wave
+{% endblock %}
+
+{% block content %}
+        <strong>Czym jest framework?</strong>
+        <br />
+        Framework jest pojęciem, które niekoniecznie musi być znane każdej osobie, ze względu na jego znaczenie w programowaniu, w tym też środowisku jest zazwyczaj używane. Możemy uznać to za swego rodzaju platformę czy też szkielet (ang. scaffold) do budowy aplikacji. Przede wszystkim takie środowisko dostarcza nam szereg komponentów i bibliotek ogólnego zastosowania do wykonywania poszczególnych zadań, skracając przy tym czas pracy programisty lub też niekiedy ułatwia ukończenie pewnego etapu aplikacji.
+        <br/>
+        <br/>
+        Z racji tego, że każdy framework z góry narzuca nam strukturę aplikacji, trzymając się przy tym ściśle nałożonych kryteriów, nauka na wstępnym etapie może okazać się bardzo trudna. Dodatkowym czynnikiem jest fakt, że aplikacja zaprojektowana według takich wzorców może mieć negatyny wpływ na wydajność danej aplikacji.
+        <br/><br/><br/>
+        <strong>Pyramid</strong>
+        <br/><br/>
+        <img src="static/pyr_logo.png" alt="" width="13%" height="13%"  style="position: relative;left:50%;" />
+        <br/><br/>
+            Jest to framework napisany w Pythonie, służący do szybkiego tworzenia aplikacji internetowych. Bazuje głównie na sprawdzonych rozwiązaniach, a jego przeznaczenie jest szeroko rozgałęzione, lecz ogólną istotą jest tworzenie wysoce skalowalnych aplikacji w prosty i efektywny sposób.
+        <br/><br/><br/>
+        W porównaniu do Django, Pyramid jest mniej popularny co ma ogólny wpływ na mniejszą ilość projektów z jego udziałem.
+        <br/><br/><br/>
+        Co dokładnie dostarcza nam Pyramid?
+        <br/>
+
+        <ul>
+            <li>Zgodność z WSGI</li>
+            <li>Dużą elastyczność</li>
+            <li>Obsługa baz danych przez ORM-y SQLAlchemy lub SQLObject</li>
+            <li>Domyślny system szablonów to Chameleon, lecz można użyć również innych szablonów</li>
+            <li>Mapowanie URL-i do kodu i generowanie URL-i za pomocą Ścieżek</li>
+        </ul>
+
+{% endblock %}
+
+

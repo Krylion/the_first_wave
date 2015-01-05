@@ -1,0 +1,42 @@
+{% extends "maintemplate.jinja2" %}
+
+{% block title %}
+Startup - The First Wave
+{% endblock %}
+
+{% block content %}
+<strong>Startup</strong>
+        <br/>
+        Uruchamianie naszej aplikacji należy do jednej z podstawowych czynności, z którą przyjdzie nam się spotkać w chwili tworzenia aplikacji. Choć w każdej dobrej korporacji, zapewne będzie grono ludzi zajmujących się całą tą logiką, to mimo wszystko warto dowiedzieć się chociaż mniej więcej na jakiej zasadzie się to wszystko odbywa.
+        <br/><br/>
+        W chwili uruchomienia dowolnej aplikacji, w konsoli systemowej (linux) zobaczysz następujący komunikat:
+        <br/><br/>
+        <img src="{{ url }}" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        Poniżej przedstawię bardzo skrócony opis całego procesu uruchamiania aplikacji w Pyramidzie. Aby dowiedzieć się więcej w tym temacie odsyłam do wątku w oficjalnej dokumentacji Pyramida: <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/startup.html" target="_BLANK">KLIK</a>
+        <br/><br/>
+        Najłatwiejszym sposobem na uruchomienie aplikacji w Pyramidzie jest użycie komendy pserve wobec pliku .ini ładującego konfigurację aplikacji oraz rozpoczynającego serwer WSGI (ang. PasteDeploy).
+        <br/><br/>
+        Poniżej przedstawiam chronologiczny opis zdarzeń po wywołaiu komendy "pserve development.ini".
+        <br/>
+        <ul>
+            <li>Kiedy w środowisku wirtualnym komenda pserve jest wywoływana, Pyramid rozpoznaje to jako moment do uruchomienia aplikacji, wykorzystując przy tym kod zawarty w pliku development.ini </li>
+            <br/>
+            <li>Framework znajduje kolejno etykiety: [app:main], [pipeline:main], [composite:main] w pliku .ini. Etykiety te reprezentują ustawienia serwera WSGI.</li>
+            <br/>
+            <li>Framework poszukuje wszystkich linii powiązanych ze sobą, odnoszących się do procesu logowania, oraz wykorzystuje je aby dostosować ustawienia biblioteki Pythona (zobacz: <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/logging.html#logging-config" target="_BLANK">Logging Configuration</a>) </li>
+            <br/>
+            <li>Dla każdej aplikacji Pyramida konstruktorem jest funkcja "main" w pliku __init__.py wraz z całym pakietem, dzięki któremu całość funkcjonuje. Jeżeli analizator składniowy Pythona nie napotka na swej drodze błędów w kodzie, całość zwróci instancję aplikacji Pyramida. </li>
+            <br/>
+            <li>Funkcja "main" w pierszej kolejności tworzy instancję konfiguracyjną (zobacz: <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/api/config.html#pyramid.config.Configurator" target="_BLANK">Configurator</a>) </li>
+            <br/>
+            <li>Następnie funkcja ta wywołuje szereg metod w instancji klasy "Configurator" utworzonej w poprzednim kroku. Celem wywoływania tych metod jest wypełnienie rejestru, który to jest bazą ustawień dla aplikacji Pyramida (zobacz: <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/glossary.html#term-application-registry" target="_BLANK">Application Registry</a>). </li>
+            <br/>
+            <li>Kolejnym krokiem jest wywołanie metody <em style="color: #455868;font-weight: bold;">make_wsgi_app()</em>, której rezultatem jest serwer WSGI. Całość powiązana jest z rejestrem, który to wcześniej został odpowiednio wypełniony.</li>
+        </ul>
+        <br/>
+        Jeżeli wszystko przebiegnie w należytym prządku i zarazem bezbłędnie, główna funkcja "main" zwróci instancję serwera WSGI, utworzoną przez (zobacz: <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/api/config.html#pyramid.config.Configurator.make_wsgi_app" target="_BLANK">pyramid.config.Configurator.make_wsgi_app()</a>).
+        <br/><br/><br/>
+        Powyżej zostały wymienione najważniejsze zagadanienia dotyczące całego procesu uruchamiania aplikacji napisanej w Pyramidzie. Ich treść jest zwykłym streszczeniem, dlatego aby dowiedzieć się więcej, odwiedź oficjalną dokumentację!
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "maintemplate.jinja2" %}
+{% block title %}
+Pojęcia - The First Wave
+{% endblock %}
+
+{% block content %}
+<strong>WSGI</strong>
+        <br/>
+        Web Server Gateway Interface  - jest Pythonowym standardem komunikacji dla aplikacji HTTP. Pozwala łączyć aplikacje w języku Python z serwerem HTTP. Interfejs ten pozwala nam na uruchomienie aplikacji bez instalowania dodatkowego oprogramowania serwera WWW tj. Apache2.
+        <br/><br/><br/>
+        <strong>MVC</strong>
+        <br/>
+        Model-View-Controler (Model-Widok-Sterownik) - jest zorientowanym obiektowo wzorcem projektowym. Aplikacja napisana zgodnie z MVC zawiera klasy implementujące logikę biznesową (jak i gdzie dane są przechowywane, kto ma do nich dostęp, jak dane są przetwarzane) w "modelach", logikę prezentacyjną (jak dane pochodzące z modeli mają zostać wyświetlone) w "widokach", a logika sterująca całą aplikacją zawarta jest w "kontrolerze".
+        <br/><br/>
+        W skrócie Model odpowiada za przetwarzanie danych, Widok za wyświetlanie informacji, natomiast Kontroler przyjmuje dane wejściowe od użytkownika i reaguje na jego poczynania, zarządzając aktualizacje modelu oraz odświeżenie widoków.
+        <br/><br/><br/>
+        <strong>URL Dispatch</strong>
+        <br/>
+        Zapewnia proste mapowanie (przyporządkowywanie) adresów URL, do obsługi "Widoku". Zgromadzony zestaw wzorców / ścieżek sprawdzany jest jedno po drugim. Jeśli jeden z wzorców pokrywa się ze ścieżką oraz żądaniem, wtedy wykonywane jest szczególne wywołanie wcześniej zadeklarowanego "Widoku".
+        <br/><br/><br/>
+        <strong>Renderer</strong>
+        <br/>
+        Renderer służy głównie do tworzenia widoku, którego brak jest w domyślnej implementacji interfejsu zwrotnego / odpowiedzi (Response) Pyramida. Pyramid spróbuje użyć wskazanego renderera by utworzyć odpowiedź. Przykładem tego może być chociażby plik, którego składnią jest  język do obsługi szablonów (Chameleon, Jinja2).
+        <br/><br/><br/>
+        <strong>Templates</strong>
+        <br/>
+        Pliki szablonów. Szablon jest plikiem zapisanym na dysku, który może być użyty do renderowania / generowania dynamicznej struktury reprezentującej przez "Widok".
+        <br/><br/><br/>
+        <strong>Static</strong>
+        <br/>
+        Pliki statyczne są wszystkimi innymi typami plików, które nie posiadają kodu Pythona.
+        <br/><br/><br/>
+        <strong>Development.ini</strong>
+        <br/>
+        Development.ini jest plikiem rozpoczynającym działanie naszej aplikacji. Zawiera zestaw funkcji pomagających nam podczas procesu tworzenia aplikacji (np: Debug Toolbar).
+        <br/><br/><br/>
+        <strong>Production.ini</strong>
+        <br/>
+        W przeciwieństwie do development.ini, plik ten używany jest w ostatniej fazie naszej aplikacji - uruchomieniu jej dla użytkownika końowego.
+
+{% endblock %}

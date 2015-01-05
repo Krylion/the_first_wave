@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+    <meta name="language" content="polish" />
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="Cezary, Kaszuba, the, first, wave, pyramid, framework, python, website, internet, strona, internetowa, test,
+    probna, pierwszy, projekt, first, project, tutorial, poradnik" />
+    <meta name="description" content="" />
+	<meta name="author" content="Cezary Kaszuba" />
+    <meta name="copyright" content="Cezary Kaszuba" />
+    <meta name="robots" content="all"/>
+    <title>
+        {% block title %}
+
+        {% endblock %}
+         - Cezary Kaszuba
+    </title>
+
+    <meta name="viewport" content="device:device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="static/favicon.ico" />
+    <link rel="stylesheet" href="static/sheet.css" />
+
+   	<link href='static/google-fonts.css' rel='stylesheet' type='text/css'>
+
+	<script src="static/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+        var pull        = $('#pull');
+            menu        = $('nav ul');
+            menuHeight  = menu.height();
+
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+    });
+
+    $(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+    </script>
+</head>
+
+<body>
+
+<section>
+<div class="logo">
+        <img src="static/logo.png" alt="" />
+</div>
+    <nav class="clearfix">
+
+        <ul class="clearfix">
+
+            <li><a href="/">Start</a></li>
+            <li><a href="http://www.ckaszuba.com" target="_blank">O mnie</a></li>
+            <li><a href="/pyramid">Pyramid</a></li>
+            <li><a href="/concepts">Pojęcia</a></li>
+        </ul>
+        <a href="#" id="pull">MENU</a>
+    </nav>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="content" {% if height %} style="height: {{ height }}" {% endif %}>
+    <p>
+    {% block content %}
+
+     {% endblock %}
+    </p>
+    <br /><br />
+    </div>
+
+    <div class="right_menu">
+        <p>
+            <div>Ciekawostki</div>
+                <a href="/jinja2" >Przykład - Jinja2</a>
+                <br/><br/>
+                <a href="/view" >views.py</a>
+                <br/><br/>
+                <a href="/init">__init__.py</a>
+                <br/><br/>
+                <a href="/startup">Startup</a>
+
+            <div style="margin-top: 50px;">Odnośniki</div>
+                <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/index.html" target="_BLANK">>> Pyramid</a>
+                <br/><br/>
+                <a href="http://jinja.pocoo.org/docs/dev/" target="_BLANK">>> Jinja2</a>
+                <br/><br/>
+                <a href="http://www.ckaszuba.com" target="_BLANK">>> Cezary Kaszuba</a>
+                <br/><br/>
+                <a href="https://github.com/Krylion" target="_BLANK">>> GitHub</a>
+                <br/><br/>
+                <a href="http://www.programuj.3-a.net" target="_BLANK">>> Programuj.info</a>
+        </p>
+    </div>
+  </div>
+</section>
+
+<section>
+    <footer>
+    <div class="footer">
+    The First Wave - &copy; 2014 - Cezary Kaszuba
+    </div>
+    </footer>
+</section>
+
+
+</body>
+</html>

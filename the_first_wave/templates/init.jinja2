@@ -1,0 +1,18 @@
+{% extends "maintemplate.jinja2" %}
+{% block title %}
+__init__.py - The First Wave
+{% endblock %}
+
+{% block content %}
+<strong>__init__.py</strong>
+        <br/>
+        Plik ten określa główną funkcję "main". Poniżej znajduje się zrzut ekranu pliku <a href="/init" target=""><em style="color: #455868;font-weight: bold;">__init__.py</em></a> naszej aplikacji:
+        <br/><br/><br/>
+        <img src="{{ url }}" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        Kiedy wywołujesz komendę "pserver development.ini", główna funkcja (main) w pliku <a href="/init" target=""><em style="color: #455868;font-weight: bold;">__init__.py</em></a> jest wykonywana. Określane są wtedy ustawienia zadaklarowane w tym pliku, następnie zwaracana jest aplikacja z serwerem WSGI.
+        <br/><br/>
+        Zobacz <a href="/startup" target=""><em style="color: #455868;font-weight: bold;">Startup</em></a> aby dowiedzieć się więcej o wstępnej fazie uruchamiania aplikacji.
+{% endblock %}
+
+command, the main function above is executed. It accepts some settings and returns a WSGI application.

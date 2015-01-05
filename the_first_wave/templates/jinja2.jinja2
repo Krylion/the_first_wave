@@ -1,0 +1,63 @@
+{% extends "maintemplate.jinja2" %}
+{% block title %}
+Jinja2 - Przykład - The First Wave
+{% endblock %}
+
+{% block content %}
+<strong>Jinja2 - Przykład</strong>
+        <br/>
+        Jest to w zasadzie prosty przykład ukazujący podstawową mechanikę oraz zasadę działania szablonów na bazie Jinja2.
+        <br/><br/><br/>
+        Poniższe zdanie:
+        <br/><br/>
+        <em style="color: #455868;font-weight: bold;">{{ variable }}</em>
+        <br/><br/>
+        Jest wynikiem następującego kodu w pliku <em style="color: #455868;font-weight: bold;">jinja2.jinja2</em>:
+        <br/><br/>
+        <img src="static/jinja2-1.png" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        Znacznik {{ '{{' }} variable {{ '}}' }} jest odpowiedzialny za wyświetlanie zawartości zmiennej "variable", która zadeklarowana została w definicji "Widoku" (w pliku <em style="color: #455868;font-weight: bold;">views.py</em>) i następnie zwrócona przez funkcję:
+        <br/><br/>
+        <img src="static/jinja2-2.png" alt="" width="95%" height="95%"/>
+        <br/><br/><br/><br/><br/>
+        A co jeżeli chcemy wyświetlić tablicę, która przykładowo jest wynikiem jakichś działań? - Nic prostszego, Jinja2 oferuje chociażby pęlę for do takich operacji. Poniższy tekst:
+        <br/><br/>
+        {% if aLittleList %}
+            <em style="color: #455868;font-weight: bold;">
+            {% for element in aLittleList -%}
+                {{ element }}
+            {% endfor %}
+            </em>
+        {% endif %}
+        <br/><br/>
+        Analogicznie do poprzedniego przykładu, zasada działania jest taka sama, dodano jedynie instrukcję warunkową if, sprawdzającą "istnienie" zmiennej "aLittleList" oraz pętlę for wyświetlającą przekazaną tablicę (listę). Odpowiedzialny kod za to zdarzenie znajduje się w pliku <em style="color: #455868;font-weight: bold;">jinja2.jinja2</em>:
+        <br/><br/>
+        <img src="static/jinja2-3.png" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        Natomiast lista "aLittleList" została zadeklarowana oraz zwrócona przez funkcję w pliku <em style="color: #455868;font-weight: bold;">views.py</em>:
+        <br/><br/>
+        <img src="static/jinja2-4.png" alt="" width="95%" height="95%"/>
+        <br/><br/><br/><br/><br/>
+        Python oferuje nam również tzw. "Słowniki" (ang. Dictionary), czyli tablice asocjacyjne. Co jeżeli przyjdzie nam w przyszłości wyświetlić taką listę? Oto przykład:
+        <br/><br/>
+        {% if aLittleDictionary %}
+            <em style="color: #455868;font-weight: bold;">
+            {% for element in aLittleDictionary %}
+                {{ element }}: {{ aLittleDictionary[element] }}
+                <br />
+            {% endfor %}
+            </em>
+        {% endif %}
+        <br/><br/>
+        Za powyższe działanie odpowiedzialny jest kod w pliku <em style="color: #455868;font-weight: bold;">jinja2.jinja2</em>:
+        <br/><br/>
+        <img src="static/jinja2-5.png" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        Oraz deklaracja i zwrócenie tej tablicy poprzez funkcję w pliku <em style="color: #455868;font-weight: bold;">views.py</em>:
+        <br/><br/>
+        <img src="static/jinja2-6.png" alt="" width="95%" height="95%"/>
+        <br/><br/>
+        W zasadzie to by było na tyle. Mam nadzieję, że powyższe przykłady chociaż w niewielkim stopniu rozwiały szereg Twoich niewiadomych, o ile takowe oczywiście miały miejsce... :).
+
+{% endblock %}
+
